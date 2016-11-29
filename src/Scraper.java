@@ -1,6 +1,10 @@
 import com.jaunt.Element;
 import com.jaunt.Elements;
 import com.jaunt.UserAgent;
+import org.json.simple.JSONObject;
+
+import java.io.File;
+import java.io.FileWriter;
 
 
 /**
@@ -17,16 +21,25 @@ public class Scraper {
             
             Elements links = userAgent.doc.findEvery("<h1 class='ui-article-title'>").findEvery("<a>");
             
-            for (Element link : links){
+            new File("json").mkdir();
+            
+            int i = 0;
+            
+            for (Element link : links) {
+                
                 userAgent.visit(link.getAt("href"));
-                Elements contents = userAgent.doc.findEvery("<div class='ui-widget app headlines detail'>");
                 
-                for (Element content : contents){
-                    
-                    System.out.println(content.innerHTML());
-                }
+                Element title = userAgent.doc.findFirst("<div class='ui-widget-header'>");
+                Element content = userAgent.doc.findFirst("<div class='ui-widget-detail'>");
                 
-                System.out.println("====================================================\n\n\n\n\n");
+                JSONObject obj = new JSONObject();
+                obj.put("status", "publish");
+                obj.put("title", title.innerText().trim());
+                obj.put("content", content.innerHTML().trim());
+    
+                FileWriter file = new FileWriter("json/"+(i++)+".json");
+                file.write(obj.toJSONString());
+                file.close();
             }
             
         } catch (Exception e) {
