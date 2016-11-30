@@ -1,6 +1,14 @@
 *.idea
 *.iml
 
+.classpath
+.project
+
+scraper_lib/
+
+json/
+lib/
+
 *.class
 
 # Mobile Tools for Java (J2ME)

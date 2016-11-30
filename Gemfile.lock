@@ -1,0 +1,17 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    cogwheels (0.2.0)
+      safe_yaml (~> 1.0)
+    jsontodb (2.0.0)
+      cogwheels (~> 0.1)
+    safe_yaml (1.0.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  jsontodb (~> 2.0)
+
+BUNDLED WITH
+   1.13.6
