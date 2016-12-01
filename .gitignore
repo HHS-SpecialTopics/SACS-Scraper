@@ -8,6 +8,9 @@ scraper_lib/
 
 json/
 lib/
+config/
+
+jsontodb-config.yml
 
 *.class
 

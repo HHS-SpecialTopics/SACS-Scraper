@@ -1,6 +1,0 @@
-User: REMOVED
-Pass: REMOVED
-Matrix:
-    - Files: json/*.json
-      Command: post
-      Url: REMOVED
