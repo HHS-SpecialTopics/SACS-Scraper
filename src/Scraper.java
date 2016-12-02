@@ -75,11 +75,12 @@ public class Scraper {
             PrintWriter pw = new PrintWriter(f);
             pw.println("User: " + props.get("username"));
             pw.println("Pass: " + props.get("password"));
-            if (index - prior > 0) {
+            int num = index - prior;
+            if (num > 0) {
                 pw.println("Matrix:");
                 
-                for (int i = 0; i < index - prior; i++) {
-                    pw.println("  - Files: json/" + i + ".json");
+                for (int i = 0; i < num; i++) {
+                    pw.println("  - Files: json/" + (num - i - 1) + ".json");
                     pw.println("    Command: post");
                     pw.println("    Url: " + props.get("url"));
                 }
