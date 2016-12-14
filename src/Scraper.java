@@ -1,6 +1,7 @@
 import com.jaunt.Element;
 import com.jaunt.Elements;
 import com.jaunt.UserAgent;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import java.io.File;
@@ -64,6 +65,9 @@ public class Scraper {
                 obj.put("status", "publish");
                 obj.put("title", title.innerText().trim());
                 obj.put("content", content.innerHTML().trim());
+                JSONArray tags = new JSONArray();
+                tags.add("official");
+                obj.put("tags", tags);
                 
                 FileWriter file = new FileWriter("json/" + (index++) + ".json");
                 file.write(obj.toJSONString());
