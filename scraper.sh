@@ -4,7 +4,7 @@ bundle install                  # Make sure Ruby gems (specifically jsontodb) ar
 bundle update
 
 echo "Scraping..."
-java -jar bin/scraper.jar       # Scrape the SACS webpage
+ruby lib/scraper.rb             # Scrape the SACS webpage
 
 echo "Scraped!  Uploading..."
 jsontodb jsontodb-config.yml    # Post the scraped data

@@ -1,3 +1,4 @@
 source 'https://rubygems.org'
 
-gem 'jsontodb', '~> 2.0'
+gem 'nokogiri', '~> 1.6.8'
+gem 'jsontodb', '~> 2.1', '>= 2.1.1'

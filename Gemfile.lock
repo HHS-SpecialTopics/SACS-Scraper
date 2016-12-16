@@ -3,15 +3,19 @@ GEM
   specs:
     cogwheels (0.2.0)
       safe_yaml (~> 1.0)
-    jsontodb (2.0.0)
-      cogwheels (~> 0.1)
+    jsontodb (2.1.1)
+      cogwheels (~> 0.2)
+    mini_portile2 (2.1.0)
+    nokogiri (1.6.8.1-x64-mingw32)
+      mini_portile2 (~> 2.1.0)
     safe_yaml (1.0.4)
 
 PLATFORMS
-  ruby
+  x64-mingw32
 
 DEPENDENCIES
-  jsontodb (~> 2.0)
+  jsontodb (~> 2.1, >= 2.1.1)
+  nokogiri (~> 1.6.8)
 
 BUNDLED WITH
-   1.13.6
+   1.11.2
