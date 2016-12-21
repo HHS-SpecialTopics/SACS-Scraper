@@ -16,7 +16,9 @@ links.each do |link|
   title = subpage.css('div.ui-widget-header h1 span')[0].text.strip
   text = subpage.css('div.ui-widget-detail')[0].to_s
                 .gsub("\r\n", ' ')
-                .gsub('src="/', 'src="http://www.sacs.k12.in.us/').strip
+                .gsub('src="/', 'src="http://www.sacs.k12.in.us/')
+                .gsub('href="/', 'href="http://www.sacs.k12.in.us/')
+                .gsub('http://', 'https://').strip
 
   json = { title: title, content: text,
            status: 'publish', 'categories[]' => [7], 'tags[]' => [6,8] }
