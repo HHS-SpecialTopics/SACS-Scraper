@@ -18,8 +18,6 @@ links.each do |link|
                 .gsub("\r\n", ' ')
                 .gsub('src="/', 'src="http://www.sacs.k12.in.us/')
                 .gsub('href="/', 'href="http://www.sacs.k12.in.us/')
-                .gsub('http://', 'https://')
-                .gsub('https://www.sacs', 'http://www.sacs').strip
 
   json = { title: title, content: text,
            status: 'publish', 'categories[]' => [7], 'tags[]' => [6,8] }
